@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-export function createRandomUser() {
+export default function createRandomUser() {
   return {
     userId: faker.string.uuid(),
     username: faker.internet.username(),
@@ -11,9 +11,3 @@ export function createRandomUser() {
     registeredAt: faker.date.past(),
   };
 }
-
-export const users = faker.helpers.multiple(createRandomUser, {
-  count: 5,
-});
-
-console.log(users)
